@@ -1,5 +1,14 @@
 <div class="container">
 <h1>Edit play</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <%= simple_form_for @play, html: {multipart: true} do |f| %>
+    <%= f.select :category_id, @categories %>
+    <%= f.input :title, label: "Play Title" %>
+    <%= f.input :description %>
+    <%= f.input :director %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
 </div>
